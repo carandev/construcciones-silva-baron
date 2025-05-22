@@ -1,0 +1,22 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { projects } from '../../../data/projects.js';
+
+export async function getStaticPaths() {
+  return projects.map(project => ({
+    params: { id: project.id },
+    props: { project }
+  }));
+}
+
+const { project } = Astro.props;
+---
+<MainLayout title={project.title}>
+  <div class="container" style="padding-top: 100px; padding-bottom: 50px;">
+    <h1>{project.title}</h1>
+    <img src={project.image} alt={project.title} style="max-width: 100%; height: auto; margin-bottom: 20px;" />
+    <p>{project.description}</p>
+    <p><strong>Categoría:</strong> {project.category}</p>
+    <a href="/#proyectos" class="btn-small" style="margin-top: 20px;">Volver a Proyectos</a>
+  </div>
+</MainLayout>
