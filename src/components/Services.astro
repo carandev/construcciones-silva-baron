@@ -1,0 +1,53 @@
+﻿---
+const services = [
+  {
+    icon: "fas fa-home",
+    title: "Construcción Residencial",
+    description: "Casas, apartamentos y condominios diseñados con los más altos estándares de calidad y confort."
+  },
+  {
+    icon: "fas fa-building",
+    title: "Construcción Comercial",
+    description: "Centros comerciales, oficinas y locales comerciales que combinan funcionalidad y estética."
+  },
+  {
+    icon: "fas fa-industry",
+    title: "Construcción Industrial",
+    description: "Bodegas, plantas de producción y centros logísticos diseñados para maximizar la eficiencia."
+  },
+  {
+    icon: "fas fa-pencil-ruler",
+    title: "Diseño Arquitectónico",
+    description: "Diseños personalizados que reflejan la visión y necesidades específicas de cada cliente."
+  },
+  {
+    icon: "fas fa-hammer",
+    title: "Remodelaciones",
+    description: "Transformamos espacios existentes para darles nueva vida y funcionalidad."
+  },
+  {
+    icon: "fas fa-hard-hat",
+    title: "Consultoría en Construcción",
+    description: "Asesoramiento experto en todas las etapas de su proyecto de construcción."
+  }
+];
+---
+
+<section id="servicios" class="section services">
+	<div class="container">
+		<div class="section-title">
+			<h2>Nuestros Servicios</h2>
+		</div>
+		<div class="services-grid">
+			{services.map((service) => (
+				<div class="service-item">
+					<div class="service-icon">
+						<i class={service.icon}></i>
+					</div>
+					<h3>{service.title}</h3>
+					<p>{service.description}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

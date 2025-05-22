@@ -1,0 +1,46 @@
+﻿---
+const testimonials = [
+  {
+    content: "Construcciones Silva Baron superó todas nuestras expectativas. Su atención al detalle y compromiso con la calidad son excepcionales. Nuestro nuevo hogar es exactamente lo que soñamos.",
+    author: "Juan Pérez",
+    position: "Propietario, Residencial Altos del Bosque",
+    image: "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    content: "Trabajar con el equipo de Silva Baron fue una experiencia extraordinaria. Entregaron nuestro proyecto comercial a tiempo y dentro del presupuesto, sin comprometer la calidad.",
+    author: "María Rodríguez",
+    position: "Gerente, Centro Comercial Plaza Central",
+    image: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    content: "La profesionalidad y experiencia de Construcciones Silva Baron fueron evidentes desde el primer día. Nuestro complejo industrial cumple con todos los requisitos técnicos y estéticos que necesitábamos.",
+    author: "Carlos Gómez",
+    position: "Director, Complejo Industrial Norte",
+    image: "https://randomuser.me/api/portraits/men/67.jpg"
+  }
+];
+---
+
+<section id="testimonios" class="section testimonials">
+	<div class="container">
+		<div class="section-title">
+			<h2>Lo Que Dicen Nuestros Clientes</h2>
+		</div>
+		<div class="testimonials-slider">
+			{testimonials.map((testimonial) => (
+				<div class="testimonial-item">
+					<div class="testimonial-content">
+						<p>"{testimonial.content}"</p>
+					</div>
+					<div class="testimonial-author">
+						<img src={testimonial.image} alt={testimonial.author} />
+						<div>
+							<h4>{testimonial.author}</h4>
+							<p>{testimonial.position}</p>
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
