@@ -8,15 +8,41 @@
 				<img src="/images/LogoCompleto.svg" alt="Construcciones Silva Baron" />
 			</a>
 		</div>
+		<button class="mobile-menu-toggle" aria-label="Menú">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
 		<nav class="nav">
 			<ul>
-				<li><a href="#inicio">Inicio</a></li>
-				<li><a href="#nosotros">Nosotros</a></li>
-				<li><a href="#proyectos">Proyectos</a></li>
-				<li><a href="#servicios">Servicios</a></li>
-				<li><a href="#testimonios">Testimonios</a></li>
-				<li><a href="#contacto" class="btn-contacto">Contacto</a></li>
+				<li><a href="/#inicio">Inicio</a></li>
+				<li><a href="/#nosotros">Nosotros</a></li>
+				<li><a href="/#proyectos">Proyectos</a></li>
+				<li><a href="/#servicios">Servicios</a></li>
+				<li><a href="/#testimonios">Testimonios</a></li>
+				<li><a href="/#contacto" class="btn-contacto">Contacto</a></li>
 			</ul>
 		</nav>
 	</div>
 </header>
+
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', function() {
+		const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+		const nav = document.querySelector('.nav');
+
+		mobileMenuToggle.addEventListener('click', function() {
+			this.classList.toggle('active');
+			nav.classList.toggle('active');
+		});
+
+		// Close menu when clicking on a link
+		const navLinks = document.querySelectorAll('.nav a');
+		navLinks.forEach(link => {
+			link.addEventListener('click', function() {
+				mobileMenuToggle.classList.remove('active');
+				nav.classList.remove('active');
+			});
+		});
+	});
+</script>

@@ -1,0 +1,70 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { projects, getCategoryName } from '../../data/projects.js';
+import '../../styles/global.css';
+import '../../styles/project-detail.css';
+
+// This function is required for dynamic routes in Astro
+export async function getStaticPaths() {
+  // Generate a path for each project
+  return projects.map(project => ({
+    params: { id: project.id },
+    props: { project }
+  }));
+}
+
+// Get the project from the props
+const { project } = Astro.props;
+---
+
+<MainLayout title={`${project.title} | Construcciones Silva Baron`} description={project.description}>
+  <div class="project-detail">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/#proyectos">Proyectos</a> &gt; <span>{project.title}</span>
+      </div>
+
+      <div class="project-header">
+        <h1>{project.title}</h1>
+        <span class="category-badge">{getCategoryName(project.category)}</span>
+      </div>
+
+      <div class="project-main-image">
+        <img src={project.image} alt={project.title} />
+      </div>
+
+      <div class="project-content">
+        <div class="project-description">
+          <h2>Descripción del Proyecto</h2>
+          <p>{project.fullDescription}</p>
+        </div>
+
+        <div class="project-features">
+          <h2>Características</h2>
+          <ul>
+            {project.features.map(feature => (
+              <li><i class="fas fa-check-circle"></i> {feature}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div class="project-gallery">
+        <h2>Galería</h2>
+        <div class="gallery-grid">
+          {project.gallery.map(image => (
+            <div class="gallery-item">
+              <img src={image} alt={project.title} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="project-cta">
+        <h2>¿Interesado en este proyecto?</h2>
+        <p>Contáctenos para obtener más información o programar una visita.</p>
+        <a href="/#contacto" class="btn">Contactar Ahora</a>
+      </div>
+    </div>
+  </div>
+</MainLayout>

@@ -417,6 +417,12 @@
   padding: var(--spacing-lg) 0;
 }
 
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
 .cta-content h2 {
   color: var(--white-color);
   font-size: 2.5rem;
@@ -434,9 +440,14 @@
   .about-content,
   .contact-content {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
 
   .about-image {
+    order: -1;
+  }
+
+  .contact-info {
     order: -1;
   }
 
@@ -456,6 +467,27 @@
 @media (max-width: 768px) {
   .about-values {
     grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+  }
+
+  .value-item {
+    padding: var(--spacing-xs);
+  }
+
+  .value-item i {
+    font-size: 1.75rem;
+  }
+
+  .value-item h4 {
+    font-size: 1.1rem;
   }
 
   .hero h1 {
@@ -478,12 +510,88 @@
   .cta-content p {
     font-size: 1rem;
   }
+
+  .contact-form {
+    padding: var(--spacing-sm);
+  }
+
+  .contact-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .contact-item p {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 576px) {
   .projects-filter {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+  }
+
+  .filter-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-img {
+    height: 180px;
+  }
+
+  .project-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-info p {
+    font-size: 0.85rem;
+  }
+
+  .services-grid,
+  .testimonials-slider {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-icon i {
+    font-size: 1.5rem;
+  }
+
+  .testimonial-item {
+    padding: 15px;
+  }
+
+  .testimonial-content p {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+
+  .testimonial-content p::before,
+  .testimonial-content p::after {
+    font-size: 1.5rem;
+  }
+
+  .testimonial-author img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .testimonial-author h4 {
+    font-size: 0.9rem;
+  }
+
+  .testimonial-author p {
+    font-size: 0.8rem;
   }
 
   .hero {
@@ -492,5 +600,9 @@
 
   .hero h1 {
     font-size: 2rem;
+  }
+
+  .hero-logo img {
+    width: 200px;
   }
 }
