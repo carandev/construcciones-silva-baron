@@ -1,0 +1,167 @@
+﻿/* Animations for Construcciones Silva Baron website
+ * These animations add subtle movement and transitions to enhance the user experience
+ * while maintaining the elegant and modern aesthetic of the site.
+ */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide In From Left Animation */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In From Right Animation */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale In Animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Subtle Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Hero Section Animations */
+.hero-logo img {
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero h1 {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.hero p {
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.hero-buttons {
+  animation: fadeIn 1.8s ease-out forwards;
+}
+
+/* Section Title Animations */
+.section-title h2 {
+  animation: slideUp 0.8s ease-out forwards;
+  animation-play-state: paused;
+}
+
+/* Section Content Animations */
+.about-content, .projects-grid, .services-grid, .testimonials-slider, .contact-content, .cta-content {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-play-state: paused;
+}
+
+/* Project Item Enhanced Animations */
+.project-item {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-8px);
+}
+
+.project-img img {
+  transition: transform 0.6s ease;
+}
+
+.project-item:hover .project-img img {
+  transform: scale(1.08);
+}
+
+/* Button Hover Animation */
+.btn:hover, .btn-secondary:hover, .btn-small:hover {
+  animation: pulse 0.5s ease-in-out;
+}
+
+/* Scroll Animation Observer */
+.animate-on-scroll {
+  opacity: 0;
+}
+
+.animate-on-scroll.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-on-scroll.animate-slideUp {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.animate-slideInRight {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.animate-scaleIn {
+  animation: scaleIn 0.8s ease-out forwards;
+}
+
+/* JavaScript will add the class 'animate' to trigger these animations when scrolled into view */
